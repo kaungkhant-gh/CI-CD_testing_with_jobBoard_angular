@@ -1,0 +1,25 @@
+name: Lint job board frontend on PR
+
+on:
+  pull_request:
+    branches:
+      - develop
+    paths:
+      - "frontend/**"
+
+jobs:
+  check-style:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli
+       
+      - name: lint
+        run: |
+          npm i
+          ng lint
