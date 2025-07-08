@@ -5,7 +5,7 @@ on:
     branches:
       - develop
     paths:
-      - "frontend/job_board_frontend/**"
+      - "frontend/**"
 
 jobs:
   check-style:
