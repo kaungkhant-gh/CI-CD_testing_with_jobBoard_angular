@@ -17,7 +17,7 @@ jobs:
 
 
       - name: Install dependencies and run linter
-        working-directory: ./frontend/job_board_frontend
+        working-directory: frontend
         run: |
           npm install
           npm run lint
