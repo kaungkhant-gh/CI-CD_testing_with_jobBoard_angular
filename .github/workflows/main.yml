@@ -1,0 +1,27 @@
+name: Deploy frontend app for PR review
+
+on:
+  pull_request:
+    branches:
+      - develop
+    paths: 
+      - "frontend/**"
+
+jobs:
+  check-style:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+
+      - name: Install dependencies and run linter
+        working-directory: ./frontend
+        run: |
+          npm install
+          npm run lint
