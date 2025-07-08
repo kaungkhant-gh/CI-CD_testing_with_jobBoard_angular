@@ -1,0 +1,9 @@
+<h2>{{ job?.attributes?.title }}</h2>
+<p><strong>Company:</strong> {{ job?.attributes?.company }}</p>
+<p><strong>Location:</strong> {{ job?.attributes?.location }}</p>
+<p><strong>Salary:</strong> {{ job?.attributes?.salaryRange }}</p>
+<p><strong>Remote:</strong> {{ job?.attributes?.remote ? 'Yes' : 'No' }}</p>
+<p><strong>Description:</strong></p>
+<div [innerHTML]="job?.attributes?.description"></div>
+
+<a routerLink="/jobs">← Back to List</a>

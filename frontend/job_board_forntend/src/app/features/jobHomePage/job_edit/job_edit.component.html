@@ -1,0 +1,8 @@
+<h2>Edit Job</h2>
+<input [(ngModel)]="job.title" placeholder="Title" />
+<input [(ngModel)]="job.company" placeholder="Company" />
+<input [(ngModel)]="job.location" placeholder="Location" />
+<input [(ngModel)]="job.salaryRange" placeholder="Salary Range" />
+<label><input type="checkbox" [(ngModel)]="job.remote" /> Remote</label>
+<textarea [(ngModel)]="job.description" placeholder="Description"></textarea>
+<button (click)="updateJob()">Update</button>

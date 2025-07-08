@@ -1,0 +1,11 @@
+<h2>Job Listings</h2>
+<a routerLink="/jobs/add">+ Add Job</a>
+<ul>
+  <li *ngFor="let job of jobs">
+    <h3>{{ job.attributes.title }} at {{ job.attributes.company }}</h3>
+    <p>{{ job.attributes.location }} | {{ job.attributes.remote ? 'Remote' : 'On-site' }}</p>
+    <button (click)="goToDetail(job.id)">View</button>
+    <button (click)="goToEdit(job.id)">Edit</button>
+    <button (click)="deleteJob(job.id)">Delete</button>
+  </li>
+</ul>
