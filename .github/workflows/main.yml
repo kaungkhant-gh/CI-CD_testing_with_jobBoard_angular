@@ -1,21 +1,23 @@
-name: Deploy frontend app for PR review
+name: Lint job board frontend on PR
 
 on:
   pull_request:
     branches:
       - develop
-    paths: 
-      - "frontend/**"
+    paths:
+      - "frontend/job_board_frontend/**"
 
 jobs:
   check-style:
     runs-on: ubuntu-22.04
 
     steps:
-     
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
 
       - name: Install dependencies and run linter
-        working-directory: ./frontend
+        working-directory: ./frontend/job_board_frontend
         run: |
           npm install
           npm run lint
